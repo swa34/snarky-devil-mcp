@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "snarky-devil": {
+      "command": "node",
+      "args": ["/path/to/snarky-devil-mcp/mcp-server/dist/index.js"],
+      "env": {
+        "ANTHROPIC_API_KEY": "your-key-here"
+      }
+    }
+  }
+}
