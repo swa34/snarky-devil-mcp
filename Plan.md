@@ -298,8 +298,9 @@ Both tools call the Anthropic API internally with a snarky system prompt.
 
 ## Stack
 
-- MCP server: Node.js 18+, TypeScript, @modelcontextprotocol/sdk
-- API: Anthropic SDK (claude-sonnet-4-5 model, or configurable)
+- Check the npm registry for the latest on all libraries and dependencies, but plan for:
+- MCP server: Node.js 25+, TypeScript, @modelcontextprotocol/sdk
+- API: Anthropic SDK latest check teh npm registry(claude-sonnet-4-6 model, or configurable)
 - Tests: Vitest
 - Website: Plain HTML/CSS/JS, no framework
 

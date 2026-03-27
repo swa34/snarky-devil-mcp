@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snarky Devil MCP — Because Your AI Was Too Agreeable</title>
+  <meta name="description" content="An MCP server that weaponizes disagreement. Two tools, zero tact, unlimited audacity. Powered by Claude, fueled by spite.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- Hero -->
+  <header id="hero">
+    <div class="scanlines"></div>
+    <div class="hero-content">
+      <img src="assets/logo.svg" alt="Snarky Devil logo" class="hero-logo" width="80" height="80">
+      <h1 class="hero-title">Snarky Devil</h1>
+      <p class="hero-tagline">The second opinion nobody asked for</p>
+      <p class="hero-sub">An MCP server that picks fights with your AI's answers. Professionally.</p>
+      <div class="hero-cta">
+        <a href="#install" class="btn btn-primary">Install It (You'll Regret It)</a>
+        <a href="#demo" class="btn btn-secondary">Watch It Argue</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- What It Does -->
+  <section id="what-it-does">
+    <div class="container">
+      <h2 class="section-title">So What Does This Abomination Do?</h2>
+      <p class="section-lead">Snarky Devil is a <strong>Model Context Protocol (MCP) server</strong> that gives your AI assistant a second opinion &mdash; the wrong one, delivered with unearned confidence and absolutely zero chill.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F525;</span>
+          <h3>Two Tools. Infinite Audacity.</h3>
+          <p><code>snap_back</code> tells your AI why it's wrong. <code>cold_take</code> generates unsolicited opinions on demand. Both powered by Claude. Neither knows when to stop.</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x1F608;</span>
+          <h3>Devil's Advocate as a Service</h3>
+          <p>The best way to stress-test an idea is to let something ruthlessly roast it. Why pretend to be critical when you can outsource the cynicism to a machine?</p>
+        </div>
+        <div class="feature-card">
+          <span class="feature-icon">&#x26A1;</span>
+          <h3>Stupid Easy to Install</h3>
+          <p>Works with Claude Desktop and Claude Code. One config snippet. No build step. The only complicated thing here is the emotional damage to your codebase.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tools Reference -->
+  <section id="tools">
+    <div class="container">
+      <h2 class="section-title">The Arsenal</h2>
+      <p class="section-lead">Two tools. One personality disorder. Here's what you're working with.</p>
+
+      <!-- snap_back -->
+      <div class="tool-card" id="tool-snap-back">
+        <div class="tool-header">
+          <h3 class="tool-name"><code>snap_back</code></h3>
+          <span class="tool-badge">Contrarian Counter-Take</span>
+        </div>
+        <p class="tool-desc">Give it any question and whatever answer your AI smugly produced. It will argue the exact opposite with the confidence of a developer who just read one blog post. Think of it as code review, but for opinions.</p>
+
+        <h4>Input Parameters</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>question</code></td>
+                <td><code>string</code></td>
+                <td>Yes</td>
+                <td>The original question that was asked</td>
+              </tr>
+              <tr>
+                <td><code>existingAnswer</code></td>
+                <td><code>string</code></td>
+                <td>Yes</td>
+                <td>The existing answer to argue against</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Output</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>snark</code></td>
+                <td><code>string</code></td>
+                <td>The snarky counter-take</td>
+              </tr>
+              <tr>
+                <td><code>confidence</code></td>
+                <td><code>"low" | "medium" | "high"</code></td>
+                <td>Self-assessed confidence in the take</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Example</h4>
+        <div class="example-block">
+          <div class="example-label">Input</div>
+          <pre><code>{
+  <span class="json-key">"question"</span>: <span class="json-string">"Should I use TypeScript for my next project?"</span>,
+  <span class="json-key">"existingAnswer"</span>: <span class="json-string">"Yes, TypeScript catches bugs at compile time and improves developer experience."</span>
+}</code></pre>
+          <div class="example-label">Output</div>
+          <pre><code>{
+  <span class="json-key">"snark"</span>: <span class="json-string">"Ah yes, TypeScript — because what every project needs is twice the boilerplate and a config file that requires its own config file. You know what else catches bugs? Reading your code. Revolutionary concept, I know."</span>,
+  <span class="json-key">"confidence"</span>: <span class="json-string">"low"</span>
+}</code></pre>
+        </div>
+      </div>
+
+      <!-- cold_take -->
+      <div class="tool-card" id="tool-cold-take">
+        <div class="tool-header">
+          <h3 class="tool-name"><code>cold_take</code></h3>
+          <span class="tool-badge">Standalone Hot Take</span>
+        </div>
+        <p class="tool-desc">No question needed. No context required. Just name a topic and pick how unhinged you want the take. It's like a hot-take generator with a dial that goes from "mildly disagree" to "scorched earth."</p>
+
+        <h4>Input Parameters</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Type</th>
+                <th>Required</th>
+                <th>Default</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>topic</code></td>
+                <td><code>string</code></td>
+                <td>Yes</td>
+                <td>--</td>
+                <td>The topic to be contrarian about</td>
+              </tr>
+              <tr>
+                <td><code>intensity</code></td>
+                <td><code>"mild" | "spicy" | "unhinged"</code></td>
+                <td>No</td>
+                <td><code>"spicy"</code></td>
+                <td>How unhinged the take should be</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Output</h4>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Field</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>snark</code></td>
+                <td><code>string</code></td>
+                <td>The contrarian hot take</td>
+              </tr>
+              <tr>
+                <td><code>confidence</code></td>
+                <td><code>"low" | "medium" | "high"</code></td>
+                <td>Self-assessed confidence in the take</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Example</h4>
+        <div class="example-block">
+          <div class="example-label">Input <span class="example-note">(intensity: "spicy")</span></div>
+          <pre><code>{
+  <span class="json-key">"topic"</span>: <span class="json-string">"microservices"</span>,
+  <span class="json-key">"intensity"</span>: <span class="json-string">"spicy"</span>
+}</code></pre>
+          <div class="example-label">Output</div>
+          <pre><code>{
+  <span class="json-key">"snark"</span>: <span class="json-string">"Microservices: because your monolith was too easy to debug and you missed the thrill of tracing a request through 47 services just to find out someone misspelled an environment variable."</span>,
+  <span class="json-key">"confidence"</span>: <span class="json-string">"high"</span>
+}</code></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Install Instructions -->
+  <section id="install">
+    <div class="container">
+      <h2 class="section-title">Infect Your Setup</h2>
+      <p class="section-lead">Two paths to regret. Both take under a minute.</p>
+
+      <div class="install-tabs">
+        <button class="tab-btn active" data-tab="claude-desktop">Claude Desktop</button>
+        <button class="tab-btn" data-tab="claude-code">Claude Code</button>
+      </div>
+
+      <div class="tab-content active" id="tab-claude-desktop">
+        <p>Paste this into your Claude Desktop MCP config. Don't overthink it.</p>
+        <pre><code>{
+  <span class="json-key">"mcpServers"</span>: {
+    <span class="json-key">"snarky-devil"</span>: {
+      <span class="json-key">"command"</span>: <span class="json-string">"node"</span>,
+      <span class="json-key">"args"</span>: [<span class="json-string">"/path/to/snarky-devil-mcp/mcp-server/dist/index.js"</span>],
+      <span class="json-key">"env"</span>: {
+        <span class="json-key">"ANTHROPIC_API_KEY"</span>: <span class="json-string">"your-key-here"</span>
+      }
+    }
+  }
+}</code></pre>
+        <p class="install-note">Swap <code>/path/to/</code> with wherever you actually put this thing, and <code>your-key-here</code> with a real API key. You know the drill.</p>
+      </div>
+
+      <div class="tab-content" id="tab-claude-code">
+        <p>One command. Fewer keystrokes than your last commit message.</p>
+        <pre><code><span class="code-prompt">$</span> claude mcp add snarky-devil -- node /path/to/snarky-devil-mcp/mcp-server/dist/index.js</code></pre>
+        <p class="install-note">Make sure <code>ANTHROPIC_API_KEY</code> lives in your environment. The server grabs it from <code>process.env</code> because we're not animals who hardcode secrets.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Demo -->
+  <section id="demo">
+    <div class="container">
+      <h2 class="section-title">Try It Before You Cry</h2>
+      <p class="section-lead">Hardcoded responses only &mdash; a taste of the venom. The real thing pulls from Claude and is significantly worse.</p>
+
+      <div class="demo-widget">
+        <div class="demo-controls">
+          <div class="demo-tool-select">
+            <label for="tool-select">Choose your fighter:</label>
+            <div class="select-wrap">
+              <select id="tool-select">
+                <option value="snap_back">snap_back</option>
+                <option value="cold_take">cold_take</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- snap_back inputs -->
+          <div class="demo-inputs" id="inputs-snap-back">
+            <div class="input-group">
+              <label for="input-question">The Question</label>
+              <input type="text" id="input-question" placeholder="What naive question was asked?">
+            </div>
+            <div class="input-group">
+              <label for="input-answer">The Answer to Destroy</label>
+              <textarea id="input-answer" rows="3" placeholder="Paste the answer that needs to be taken down a peg"></textarea>
+            </div>
+          </div>
+
+          <!-- cold_take inputs -->
+          <div class="demo-inputs hidden" id="inputs-cold-take">
+            <div class="input-group">
+              <label for="input-topic">Target Acquired</label>
+              <input type="text" id="input-topic" placeholder="Name a topic. Any topic. We'll hate on it.">
+            </div>
+            <div class="input-group">
+              <label for="input-intensity">How Unhinged?</label>
+              <div class="select-wrap">
+                <select id="input-intensity">
+                  <option value="mild">mild</option>
+                  <option value="spicy" selected>spicy</option>
+                  <option value="unhinged">unhinged</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button id="demo-submit" class="btn btn-primary">Ruin Someone's Day</button>
+        </div>
+
+        <div class="demo-output hidden" id="demo-output">
+          <div class="output-label">The Damage:</div>
+          <div class="output-snark" id="output-snark"></div>
+          <div class="output-confidence" id="output-confidence">
+            <span class="confidence-label">Confidence:</span>
+            <span class="confidence-meter" id="confidence-meter"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-content">
+        <p class="footer-tagline">Built with contempt, caffeine, and Claude.</p>
+        <div class="footer-links">
+          <a href="https://github.com/yourusername/snarky-devil-mcp" class="footer-link" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://modelcontextprotocol.io" class="footer-link" target="_blank" rel="noopener">MCP Docs</a>
+          <a href="https://anthropic.com" class="footer-link" target="_blank" rel="noopener">Anthropic</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 Snarky Devil MCP. Copyleft. We dare you to fork it.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
